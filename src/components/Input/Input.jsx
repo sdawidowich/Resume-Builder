@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types'
-import './TextInput.css'
+import './Input.css'
 
-function TextInput({id, label, dataKey, on_change}) {
+function Input({type, id, label, dataKey, on_change}) {
   const [value, setValue] = useState("");
 
   function handleChange(e) {
@@ -12,19 +12,23 @@ function TextInput({id, label, dataKey, on_change}) {
   }
 
   return (
-    <div className='textInput'>
+    <div className='input'>
         <label htmlFor={id}>{label}</label>
-        <input type="text" id={id} value={value} onChange={handleChange} data-key={dataKey} />
+        <input type={type} id={id} value={value} onChange={handleChange} data-key={dataKey} />
     </div>
   )
 }
 
-TextInput.propTypes = {
+Input.propTypes = {
+  type: PropTypes.string,
   id: PropTypes.string,
   label: PropTypes.string,
   dataKey: PropTypes.string,
   on_change: PropTypes.func,
-}
+};
 
+Input.defaultProps = {
+  type: "text"
+};
 
-export default TextInput;
+export default Input;

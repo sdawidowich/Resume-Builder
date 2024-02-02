@@ -1,10 +1,10 @@
-.textInput {
+.input {
     display: flex;
     flex-direction: column;
     margin: 8px;
 }
 
-.textInput > input[type="text"] {
+.input > input, .input > textarea {
     padding: 4px;
     border: 1px solid rgb(212, 212, 212);
     border-radius: 0.25rem;
