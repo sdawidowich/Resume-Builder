@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import InputSection from './components/InputSection/InputSection.jsx';
 import './App.css'
+import OutputPersonalDetails from './components/OutputPersonalDetails/OutputPersonalDetails.jsx';
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({});
@@ -12,7 +13,7 @@ function App() {
   return (
     <>
       <InputSection heading="Personal Details" on_change={update_personalDetails} />
-      {personalDetails.FullName}
+      <OutputPersonalDetails personalDetails={personalDetails} />
     </>
   )
 }

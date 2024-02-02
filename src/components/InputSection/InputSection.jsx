@@ -1,9 +1,10 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import TextInput from "../TextInput/TextInput";
+import './InputSection.css'
 
 function InputSection({ heading, on_change }) {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   function on_heading_click() {
     isCollapsed ? setIsCollapsed(false) : setIsCollapsed(true);
