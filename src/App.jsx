@@ -2,6 +2,7 @@ import { useState } from 'react'
 import InputSection from './components/InputSection/InputSection.jsx';
 import './App.css'
 import OutputPersonalDetails from './components/OutputPersonalDetails/OutputPersonalDetails.jsx';
+import PersonalDetailsInput from './components/InputSection/PersonalDetailsInput.jsx';
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({});
@@ -12,7 +13,9 @@ function App() {
 
   return (
     <>
-      <InputSection heading="Personal Details" on_change={update_personalDetails} />
+      <InputSection heading="Personal Details" >
+        <PersonalDetailsInput on_change={update_personalDetails} />
+      </InputSection>
       <OutputPersonalDetails personalDetails={personalDetails} />
     </>
   )
