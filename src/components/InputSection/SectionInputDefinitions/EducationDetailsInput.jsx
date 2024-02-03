@@ -20,14 +20,24 @@ function EducationItem({itemDetails, on_change}) {
 EducationItem.propTypes = {
     itemDetails: PropTypes.object,
     on_change: PropTypes.func
-  };
+};
 
-function EducationDetailsInput({educationDetails, on_change}) {
+function EducationDetailsInput({educationDetails, setEducationDetails}) {
+    function update_educationDetails(id, key, value) {
+        setEducationDetails(educationDetails.map((item) => {
+            if (item.id === id) {
+                return { ...item, [key]: value };
+            }
+        
+            return item;
+        }))
+    }
+
     return (
         <>
             {
                 educationDetails.map((item) => {
-                    return (<EducationItem key={item.id} itemDetails={item} on_change={on_change} />);
+                    return (<EducationItem key={item.id} itemDetails={item} on_change={update_educationDetails} />);
                 })
             }
         </>
@@ -36,7 +46,7 @@ function EducationDetailsInput({educationDetails, on_change}) {
 
 EducationDetailsInput.propTypes = {
     educationDetails: PropTypes.array,
-    on_change: PropTypes.func
-  };
+    setEducationDetails: PropTypes.func
+};
 
 export default EducationDetailsInput;

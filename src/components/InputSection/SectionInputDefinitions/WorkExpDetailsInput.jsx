@@ -23,12 +23,22 @@ WorkExpItem.propTypes = {
     on_change: PropTypes.func
 };
 
-function WorkExpDetailsInput({workExpDetails, on_change}) {
+function WorkExpDetailsInput({workExpDetails, setWorkExpDetails}) {
+    function update_workExpDetails(id, key, value) {
+        setWorkExpDetails(workExpDetails.map((item) => {
+            if (item.id === id) {
+                return { ...item, [key]: value };
+            }
+        
+            return item;
+        }))
+    }
+
     return (
         <>
             {
                 workExpDetails.map((item) => {
-                    return (<WorkExpItem key={item.id} itemDetails={item} on_change={on_change} />);
+                    return (<WorkExpItem key={item.id} itemDetails={item} on_change={update_workExpDetails} />);
                 })
             }
         </>
@@ -37,7 +47,7 @@ function WorkExpDetailsInput({workExpDetails, on_change}) {
 
 WorkExpDetailsInput.propTypes = {
     workExpDetails: PropTypes.array,
-    on_change: PropTypes.func
+    setWorkExpDetails: PropTypes.func
 };
 
 export default WorkExpDetailsInput;

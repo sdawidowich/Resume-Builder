@@ -9,42 +9,18 @@ import './App.css'
 function App() {
   const [personalDetails, setPersonalDetails] = useState({});
   const [educationDetails, setEducationDetails] = useState([{id: crypto.randomUUID()}]);
-  const [workExpDetails, setEorkExpDetails] = useState([{id: crypto.randomUUID()}]);
-
-  function update_personalDetails(key, value) {
-    setPersonalDetails({ ...personalDetails, [key]: value });
-  }
-
-  function editEducationItem(id, key, value) {
-    setEducationDetails(educationDetails.map((item) => {
-      if (item.id === id) {
-        return { ...item, [key]: value };
-      }
-
-      return item;
-    }))
-  }
-
-  function editWorkExpItem(id, key, value) {
-    setEorkExpDetails(workExpDetails.map((item) => {
-      if (item.id === id) {
-        return { ...item, [key]: value };
-      }
-
-      return item;
-    }))
-  }
+  const [workExpDetails, setWorkExpDetails] = useState([{id: crypto.randomUUID()}]);
 
   return (
     <>
       <InputSection heading="Personal Details" >
-        <PersonalDetailsInput on_change={update_personalDetails} />
+        <PersonalDetailsInput personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} />
       </InputSection>
       <InputSection heading="Education" >
-        <EducationDetailsInput educationDetails={educationDetails} on_change={editEducationItem} />
+        <EducationDetailsInput educationDetails={educationDetails} setEducationDetails={setEducationDetails} />
       </InputSection>
       <InputSection heading="Work Experience" >
-        <WorkExpDetailsInput workExpDetails={workExpDetails} on_change={editWorkExpItem} />
+        <WorkExpDetailsInput workExpDetails={workExpDetails} setWorkExpDetails={setWorkExpDetails} />
       </InputSection>
       <OutputPersonalDetails personalDetails={personalDetails} />
       <div className="output-personalDetails">
