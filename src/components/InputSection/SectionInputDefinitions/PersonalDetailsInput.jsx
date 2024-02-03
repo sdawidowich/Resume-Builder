@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import Input from "../Input/Input";
-import Textarea from "../Textarea/Textarea";
+import Input from "../../Input/Input";
+import Textarea from "../../Textarea/Textarea";
 
 function PersonalDetailsInput({on_change}) {
     return (
