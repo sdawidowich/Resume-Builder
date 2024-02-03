@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Button from "../Button/Button.jsx";
 
 function SectionDetailsInput({sectionDetails, setSectionDetails, SectionItem}) {
     function update_sectionDetails(id, key, value) {
@@ -11,6 +12,10 @@ function SectionDetailsInput({sectionDetails, setSectionDetails, SectionItem}) {
         }))
     }
 
+    function add_sectionDetails() {
+        setSectionDetails([...sectionDetails, {id: crypto.randomUUID()}]);
+    }
+
     return (
         <>
             {
@@ -18,6 +23,7 @@ function SectionDetailsInput({sectionDetails, setSectionDetails, SectionItem}) {
                     return (<SectionItem key={item.id + "-input"} itemDetails={item} on_change={update_sectionDetails} />);
                 })
             }
+            <Button text="Add" on_click={add_sectionDetails} />
         </>
     );
 }
