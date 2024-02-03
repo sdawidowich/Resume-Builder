@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import Input from "../../Input/Input";
 import Textarea from "../../Textarea/Textarea";
 
-function WorkExpItem({itemDetails, on_change}) {
+function WorkExpInputItem({itemDetails, on_change}) {
     function handleChange(key, val) {
         on_change(itemDetails.id, key, val);
     }
@@ -18,36 +18,9 @@ function WorkExpItem({itemDetails, on_change}) {
     );
 }
 
-WorkExpItem.propTypes = {
+WorkExpInputItem.propTypes = {
     itemDetails: PropTypes.object,
     on_change: PropTypes.func
 };
 
-function WorkExpDetailsInput({workExpDetails, setWorkExpDetails}) {
-    function update_workExpDetails(id, key, value) {
-        setWorkExpDetails(workExpDetails.map((item) => {
-            if (item.id === id) {
-                return { ...item, [key]: value };
-            }
-        
-            return item;
-        }))
-    }
-
-    return (
-        <>
-            {
-                workExpDetails.map((item) => {
-                    return (<WorkExpItem key={item.id} itemDetails={item} on_change={update_workExpDetails} />);
-                })
-            }
-        </>
-    );
-}
-
-WorkExpDetailsInput.propTypes = {
-    workExpDetails: PropTypes.array,
-    setWorkExpDetails: PropTypes.func
-};
-
-export default WorkExpDetailsInput;
+export default WorkExpInputItem;

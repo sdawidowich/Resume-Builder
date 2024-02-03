@@ -2,8 +2,9 @@ import { useState } from 'react'
 import InputSection from './components/InputSection/InputSection.jsx';
 import OutputPersonalDetails from './components/OutputPersonalDetails/OutputPersonalDetails.jsx';
 import PersonalDetailsInput from './components/InputSection/SectionInputDefinitions/PersonalDetailsInput.jsx';
-import EducationDetailsInput from './components/InputSection/SectionInputDefinitions/EducationDetailsInput.jsx';
-import WorkExpDetailsInput from './components/InputSection/SectionInputDefinitions/WorkExpDetailsInput.jsx';
+import SectionDetailsInput from './components/InputSection/SectionDetailsInput.jsx';
+import EducationInputItem from './components/InputSection/SectionInputDefinitions/EducationDetailsInputItem.jsx';
+import WorkExpInputItem from './components/InputSection/SectionInputDefinitions/WorkExpDetailsInputItem.jsx';
 import './App.css'
 
 function App() {
@@ -17,10 +18,10 @@ function App() {
         <PersonalDetailsInput personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} />
       </InputSection>
       <InputSection heading="Education" >
-        <EducationDetailsInput educationDetails={educationDetails} setEducationDetails={setEducationDetails} />
+        <SectionDetailsInput sectionDetails={educationDetails} setSectionDetails={setEducationDetails} SectionItem={EducationInputItem} />
       </InputSection>
       <InputSection heading="Work Experience" >
-        <WorkExpDetailsInput workExpDetails={workExpDetails} setWorkExpDetails={setWorkExpDetails} />
+        <SectionDetailsInput sectionDetails={workExpDetails} setSectionDetails={setWorkExpDetails} SectionItem={WorkExpInputItem} />
       </InputSection>
       <OutputPersonalDetails personalDetails={personalDetails} />
       <div className="output-personalDetails">
