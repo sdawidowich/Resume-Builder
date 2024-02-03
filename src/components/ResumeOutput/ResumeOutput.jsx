@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import OutputPersonalDetails from './OutputPersonalDetails/OutputPersonalDetails';
 import OutputSectionDetails from './OutputSectionDetails/OutputSectionDetails';
+import "./ResumeOutput.css";
 
 function ResumeOutput({personalDetails, educationDetails, workExpDetails}) {
     return(
@@ -43,7 +44,6 @@ function ResumeOutput({personalDetails, educationDetails, workExpDetails}) {
                     })
                 }
                 </>
-                
             </OutputSectionDetails>
         </div>
     );

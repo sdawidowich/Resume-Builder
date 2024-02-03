@@ -4,10 +4,11 @@ import SectionInputItems from "../InputSection/SectionInputItems";
 import EducationInputItem from "../InputSection/SectionInputItems/EducationInputItem";
 import PersonalDetailsInputItem from "../InputSection/SectionInputItems/PersonalDetailsInputItem";
 import WorkExpInputItem from "../InputSection/SectionInputItems/WorkExpInputItem";
+import "./ResumeInput.css";
 
 function ResumeInput({personalDetails, setPersonalDetails, educationDetails, setEducationDetails, workExpDetails, setWorkExpDetails}) {
     return(
-        <>
+        <div className='resume-input'>
             <InputSection heading="Personal Details" >
                 <PersonalDetailsInputItem personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} />
             </InputSection>
@@ -17,7 +18,7 @@ function ResumeInput({personalDetails, setPersonalDetails, educationDetails, set
             <InputSection heading="Work Experience" >
                 <SectionInputItems sectionDetails={workExpDetails} setSectionDetails={setWorkExpDetails} SectionItem={WorkExpInputItem} />
             </InputSection>
-        </>
+        </div>
     );
 }
 

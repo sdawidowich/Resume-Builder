@@ -1,12 +1,17 @@
 .input {
     display: flex;
     flex-direction: column;
-    margin: 8px;
+    margin: 0.5rem 0rem;
 }
 
 .input > input, .input > textarea {
-    padding: 4px;
+    padding: 0.25rem;
     border: 1px solid rgb(212, 212, 212);
     border-radius: 0.25rem;
     max-width: 30rem;
+}
+
+.input > label {
+    display: inline;
+    padding-bottom: 0.25rem;
 }

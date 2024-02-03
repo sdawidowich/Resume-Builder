@@ -1,5 +1,23 @@
 .input-section {
-    padding: 1rem;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 0rem 0rem 1rem 0rem;
     border: 1px solid rgb(197, 197, 197);
     border-radius: 0.25rem;
+}
+
+.input-section > .heading {
+    margin: 0rem;
+    padding: 1rem;
+}
+
+.input-section > .heading:hover {
+    cursor: pointer;
+}
+
+.section-input {
+    padding: 0rem 1rem 1rem 1rem;
 }

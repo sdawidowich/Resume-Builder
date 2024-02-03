@@ -8,10 +8,10 @@ function App() {
   const [workExpDetails, setWorkExpDetails] = useState([{id: crypto.randomUUID()}]);
 
   return (
-    <>
+    <main>
       <ResumeInput personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} educationDetails={educationDetails} setEducationDetails={setEducationDetails} workExpDetails={workExpDetails} setWorkExpDetails={setWorkExpDetails} />
       <ResumeOutput personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} />
-    </>
+    </main>
   )
 }
 

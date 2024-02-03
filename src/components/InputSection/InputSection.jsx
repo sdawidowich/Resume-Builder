@@ -11,7 +11,7 @@ function InputSection({ heading, children }) {
 
   return (
     <div className="input-section">
-      <h3 onClick={on_heading_click}>{heading}</h3>
+      <h3 className="heading" onClick={on_heading_click}>{heading}</h3>
       <div className={"section-input" + (isCollapsed ? " collapsed" : "")}>
         {children}
       </div>
