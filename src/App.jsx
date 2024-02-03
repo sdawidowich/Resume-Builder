@@ -6,6 +6,7 @@ import SectionDetailsInput from './components/InputSection/SectionDetailsInput.j
 import EducationInputItem from './components/InputSection/SectionInputDefinitions/EducationDetailsInputItem.jsx';
 import WorkExpInputItem from './components/InputSection/SectionInputDefinitions/WorkExpDetailsInputItem.jsx';
 import './App.css'
+import OutputSectionDetails from './components/OutputSectionDetails/OutputSectionDetails.jsx';
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({});
@@ -24,24 +25,40 @@ function App() {
         <SectionDetailsInput sectionDetails={workExpDetails} setSectionDetails={setWorkExpDetails} SectionItem={WorkExpInputItem} />
       </InputSection>
       <OutputPersonalDetails personalDetails={personalDetails} />
-      <div className="output-personalDetails">
-            <h2 className='heading'>{educationDetails[0].School}</h2>
-            <div className="details">
-                <div>{educationDetails[0].Degree}</div>
-                <div>{educationDetails[0].StartDate}</div>
-                <div>{educationDetails[0].EndDate}</div>
-                <div>{educationDetails[0].GPA}</div>
-            </div>
-      </div>
-      <div className="output-personalDetails">
-            <h2 className='heading'>{workExpDetails[0].Company}</h2>
-            <div className="details">
-                <div>{workExpDetails[0].Position}</div>
-                <div>{workExpDetails[0].StartDate}</div>
-                <div>{workExpDetails[0].EndDate}</div>
-                <div>{workExpDetails[0].Description}</div>
-            </div>
-      </div>
+      <OutputSectionDetails heading="Education">
+        {
+          educationDetails.map((item) => {
+            return (
+                <div key={item.id + "-output"}>
+                    <h4 className='heading'>{item.School}</h4>
+                    <div className="details output">
+                        <div className='degree output'>{item.Degree}</div>
+                        <div className='startDate output'>{item.StartDate}</div>
+                        <div className='endDate output'>{item.EndDate}</div>
+                        <div className='gpa output'>{item.GPA}</div>
+                    </div>
+                </div>
+            )
+          })
+        }
+      </OutputSectionDetails>
+      <OutputSectionDetails heading="Work Experience">
+        {
+          workExpDetails.map((item) => {
+            return (
+                <div key={item.id + "-output"}>
+                    <h4 className='heading'>{item.Company}</h4>
+                    <div className="details output">
+                        <div className='degree output'>{item.Position}</div>
+                        <div className='startDate output'>{item.StartDate}</div>
+                        <div className='endDate output'>{item.EndDate}</div>
+                        <div className='gpa output'>{item.Description}</div>
+                    </div>
+                </div>
+            )
+          })
+        }
+      </OutputSectionDetails>
     </>
   )
 }

@@ -15,7 +15,7 @@ function SectionDetailsInput({sectionDetails, setSectionDetails, SectionItem}) {
         <>
             {
                 sectionDetails.map((item) => {
-                    return (<SectionItem key={item.id} itemDetails={item} on_change={update_sectionDetails} />);
+                    return (<SectionItem key={item.id + "-input"} itemDetails={item} on_change={update_sectionDetails} />);
                 })
             }
         </>
