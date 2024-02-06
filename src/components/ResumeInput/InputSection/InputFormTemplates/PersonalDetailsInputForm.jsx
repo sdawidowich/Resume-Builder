@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
-import Input from "../../Input/Input";
-import Textarea from "../../Textarea/Textarea";
+import Input from "../../../Input/Input";
+import Textarea from "../../../Textarea/Textarea";
 
-function PersonalDetailsInputItem({personalDetails, setPersonalDetails}) {
+function PersonalDetailsInputForm({personalDetails, setPersonalDetails}) {
     
     function update_personalDetails(key, value) {
         setPersonalDetails({ ...personalDetails, [key]: value });
@@ -19,9 +19,9 @@ function PersonalDetailsInputItem({personalDetails, setPersonalDetails}) {
     )
 }
 
-PersonalDetailsInputItem.propTypes = {
+PersonalDetailsInputForm.propTypes = {
     personalDetails: PropTypes.object,
     setPersonalDetails: PropTypes.func
   };
 
-export default PersonalDetailsInputItem;
+export default PersonalDetailsInputForm;

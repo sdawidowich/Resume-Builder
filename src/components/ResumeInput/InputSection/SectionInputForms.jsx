@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import Button from "../Button/Button.jsx";
+import Button from "../../Button/Button.jsx";
 
-function SectionInputItems({sectionDetails, setSectionDetails, SectionItem}) {
+function SectionInputForms({sectionDetails, setSectionDetails, SectionItem}) {
     function update_sectionDetails(id, key, value) {
         setSectionDetails(sectionDetails.map((item) => {
             if (item.id === id) {
@@ -28,10 +28,10 @@ function SectionInputItems({sectionDetails, setSectionDetails, SectionItem}) {
     );
 }
 
-SectionInputItems.propTypes = {
+SectionInputForms.propTypes = {
     sectionDetails: PropTypes.array,
     setSectionDetails: PropTypes.func,
     SectionItem: PropTypes.elementType
 };
 
-export default SectionInputItems;
+export default SectionInputForms;

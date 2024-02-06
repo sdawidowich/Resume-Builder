@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import Input from "../../Input/Input";
+import Input from "../../../Input/Input";
 
-function EducationInputItem({itemDetails, on_change}) {
+function EducationInputForm({itemDetails, on_change}) {
     function handleChange(key, val) {
         on_change(itemDetails.id, key, val);
     }
@@ -17,9 +17,9 @@ function EducationInputItem({itemDetails, on_change}) {
     );
 }
 
-EducationInputItem.propTypes = {
+EducationInputForm.propTypes = {
     itemDetails: PropTypes.object,
     on_change: PropTypes.func
 };
 
-export default EducationInputItem;
+export default EducationInputForm;
