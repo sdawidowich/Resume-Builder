@@ -1,17 +1,36 @@
 .input-section {
-    flex: 1;
-
     display: flex;
     flex-direction: column;
 
     margin: 0rem 0rem 1rem 0rem;
-    border: 1px solid rgb(197, 197, 197);
+    border: 1px solid rgb(159,173,188);
     border-radius: 0.25rem;
+    box-sizing: border-box;
+
+    background-color: rgb(245, 247, 248)
 }
 
 .input-section > .heading {
-    margin: 0rem;
+    display: flex;
     padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.input-section > .heading > h3 {
+    margin: 0rem;
+    flex-grow: 1;
+}
+
+.input-section > .heading > .section-icon {
+    margin-right: 0.5rem;
+}
+
+.input-section > .heading > .chevron {
+    transition: transform 0.2s;
+}
+
+.input-section > .heading > .expanded-icon {
+    transform: rotateZ(180deg);
 }
 
 .input-section > .heading:hover {
@@ -19,5 +38,13 @@
 }
 
 .section-input {
+    display: flex;
+    flex-direction: column;
     padding: 0rem 1rem 1rem 1rem;
+}
+
+.input-item {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
 }

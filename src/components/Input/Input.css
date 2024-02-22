@@ -5,10 +5,18 @@
 }
 
 .input > input, .input > textarea {
-    padding: 0.25rem;
-    border: 1px solid rgb(212, 212, 212);
-    border-radius: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 0.5rem;
     max-width: 30rem;
+    outline-color: transparent;
+    transition: outline 0.1s, box-shadow 0.1s;
+}
+
+.input > input:focus, .input > textarea:focus {
+    border-color: transparent;
+    outline: 2px solid rgb(119, 119, 255);
+    box-shadow: 0 0 0.2rem 0.1rem rgba(0, 0, 0, 0.082);
 }
 
 .input > label {

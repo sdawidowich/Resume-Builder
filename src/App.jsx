@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import ResumeInput from './components/ResumeInput/ResumeInput.jsx';
 import ResumeOutput from './components/ResumeOutput/ResumeOutput.jsx';
+import "./App.css"
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({});

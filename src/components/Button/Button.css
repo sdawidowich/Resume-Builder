@@ -1,6 +1,7 @@
 .button {
     padding: 0.5rem;
     min-width: 5rem;
+    max-width: 15rem;
     
     background-color: rgb(212, 217, 221);
     border: 1px solid rgb(208, 208, 209);

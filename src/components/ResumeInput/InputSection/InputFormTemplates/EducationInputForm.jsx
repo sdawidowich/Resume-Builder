@@ -7,7 +7,7 @@ function EducationInputForm({itemDetails, on_change}) {
     }
 
     return (
-        <div className="education-item">
+        <div className="input-item">
             <Input id="school" label="School" dataKey="School" on_change={handleChange} />
             <Input id="degree" label="Degree" dataKey="Degree" on_change={handleChange} />
             <Input id="startDate" label="Start Date" dataKey="StartDate" on_change={handleChange} />

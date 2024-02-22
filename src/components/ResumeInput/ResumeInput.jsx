@@ -9,13 +9,13 @@ import "./ResumeInput.css";
 function ResumeInput({personalDetails, setPersonalDetails, educationDetails, setEducationDetails, workExpDetails, setWorkExpDetails}) {
     return(
         <div className='resume-input'>
-            <InputSection heading="Personal Details" >
+            <InputSection heading="Personal Details" icon="./src/assets/person-icon.svg" icon_alt="Person Icon" >
                 <PersonalDetailsInputForm personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} />
             </InputSection>
-            <InputSection heading="Education" >
+            <InputSection heading="Education" icon="./src/assets/school-icon.svg" icon_alt="School Icon" >
                 <SectionInputForms sectionDetails={educationDetails} setSectionDetails={setEducationDetails} SectionItem={EducationInputForm} />
             </InputSection>
-            <InputSection heading="Work Experience" >
+            <InputSection heading="Work Experience" icon="./src/assets/work-icon.svg" icon_alt="Work Icon" >
                 <SectionInputForms sectionDetails={workExpDetails} setSectionDetails={setWorkExpDetails} SectionItem={WorkExpInputForm} />
             </InputSection>
         </div>

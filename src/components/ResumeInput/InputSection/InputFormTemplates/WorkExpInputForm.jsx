@@ -8,7 +8,7 @@ function WorkExpInputForm({itemDetails, on_change}) {
     }
 
     return (
-        <div className="workexp-item">
+        <div className="input-item">
             <Input id="company" label="Company" dataKey="Company" on_change={handleChange} />
             <Input id="position" label="Position" dataKey="Position" on_change={handleChange} />
             <Input id="startDate" label="Start Date" dataKey="StartDate" on_change={handleChange} />
