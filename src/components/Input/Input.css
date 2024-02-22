@@ -1,16 +1,20 @@
 .input {
     display: flex;
     flex-direction: column;
-    margin: 0.5rem 0rem;
+    margin: 0.4rem 0rem;
 }
 
 .input > input, .input > textarea {
     padding: 0.5rem;
-    border: 1px solid rgb(231, 231, 231);
-    border-radius: 0.5rem;
     max-width: 30rem;
-    outline-color: transparent;
-    transition: outline 0.1s, box-shadow 0.1s;
+
+    font-size: 1rem;
+
+    background-color: rgb(243, 243, 243);
+    border: 1px solid rgb(228, 228, 228);
+    border-radius: 0.5rem;
+    outline: 2px solid transparent;
+    transition: outline 0.3s, box-shadow 0.2s;
 }
 
 .input > input:focus, .input > textarea:focus {
@@ -21,5 +25,6 @@
 
 .input > label {
     display: inline;
-    padding-bottom: 0.25rem;
+    padding: 0.2rem 0.2rem;
+    font-size: 0.9rem;
 }

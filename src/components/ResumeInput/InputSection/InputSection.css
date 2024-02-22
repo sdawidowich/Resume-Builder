@@ -3,17 +3,23 @@
     flex-direction: column;
 
     margin: 0rem 0rem 1rem 0rem;
-    border: 1px solid rgb(159,173,188);
-    border-radius: 0.25rem;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 0.4rem;
     box-sizing: border-box;
 
-    background-color: rgb(245, 247, 248)
+    background-color: rgb(252, 252, 252);
+    box-shadow: 0rem 0rem 0.5rem 0.05rem rgba(0, 0, 0, 0.034);
 }
 
 .input-section > .heading {
     display: flex;
     padding: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+}
+
+.input-section > .heading:hover {
+    cursor: pointer;
+    filter: brightness(1);
 }
 
 .input-section > .heading > h3 {
@@ -31,10 +37,6 @@
 
 .input-section > .heading > .expanded-icon {
     transform: rotateZ(180deg);
-}
-
-.input-section > .heading:hover {
-    cursor: pointer;
 }
 
 .section-input {
