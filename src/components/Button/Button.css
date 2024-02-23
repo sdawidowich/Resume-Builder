@@ -1,5 +1,5 @@
 .button {
-    width: min-content;
+    width: fit-content;
     padding: 0.6rem 2.5rem;
 
     font-size: 0.9rem;
@@ -13,4 +13,9 @@
 .button:hover {
     cursor: pointer;
     filter: brightness(0.9);
+}
+
+.button.delete {
+    background-color: rgb(230, 24, 24);
+    border: 1px solid hsl(0, 81%, 45%);
 }

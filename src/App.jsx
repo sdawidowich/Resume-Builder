@@ -5,8 +5,8 @@ import "./App.css"
 
 function App() {
   const [personalDetails, setPersonalDetails] = useState({});
-  const [educationDetails, setEducationDetails] = useState([{id: crypto.randomUUID()}]);
-  const [workExpDetails, setWorkExpDetails] = useState([{id: crypto.randomUUID()}]);
+  const [educationDetails, setEducationDetails] = useState([{id: crypto.randomUUID(), heading: "School"}]);
+  const [workExpDetails, setWorkExpDetails] = useState([{id: crypto.randomUUID(), heading: "Company"}]);
 
   return (
     <main>

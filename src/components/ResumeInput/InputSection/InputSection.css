@@ -15,11 +15,17 @@
     display: flex;
     padding: 1rem;
     font-size: 1.2rem;
+    border-radius: 0.4rem;
+    transition: all 0.1s;
+    outline: 1px solid transparent;
 }
 
 .input-section > .heading:hover {
     cursor: pointer;
-    filter: brightness(1);
+    outline-color: rgb(233, 233, 233);
+    box-shadow: 0rem 0rem 0.5rem 0.05rem rgba(0, 0, 0, 0.075);
+    background-color: rgb(253, 253, 253);
+    transform: scale(1.005);
 }
 
 .input-section > .heading > h3 {
@@ -45,8 +51,17 @@
     padding: 0rem 1rem 1rem 1rem;
 }
 
-.input-item {
+.input-form {
     display: flex;
     flex-direction: column;
     padding-bottom: 1rem;
+}
+
+.section-items {
+    display: flex;
+    flex-direction: column;
+
+    list-style-type: none;
+    padding: 1rem 0rem;
+    margin: 0;
 }

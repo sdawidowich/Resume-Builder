@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import InputSection from "./InputSection/InputSection";
-import SectionInputForms from "./InputSection/SectionInputForms";
-import EducationInputForm from "./InputSection/InputFormTemplates/EducationInputForm";
-import PersonalDetailsInputForm from "./InputSection/InputFormTemplates/PersonalDetailsInputForm";
-import WorkExpInputForm from "./InputSection/InputFormTemplates/WorkExpInputForm";
+import InputSectionBody from "./InputSection/InputSectionBody/InputSectionBody";
+import EducationInputForm from "./InputSection/InputForms/EducationInputForm";
+import PersonalDetailsInputForm from "./InputSection/InputForms/PersonalDetailsInputForm";
+import WorkExpInputForm from "./InputSection/InputForms/WorkExpInputForm";
 import "./ResumeInput.css";
 
 function ResumeInput({personalDetails, setPersonalDetails, educationDetails, setEducationDetails, workExpDetails, setWorkExpDetails}) {
@@ -13,10 +13,10 @@ function ResumeInput({personalDetails, setPersonalDetails, educationDetails, set
                 <PersonalDetailsInputForm personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} />
             </InputSection>
             <InputSection heading="Education" icon="./src/assets/school-icon.svg" icon_alt="School Icon" >
-                <SectionInputForms sectionDetails={educationDetails} setSectionDetails={setEducationDetails} SectionItem={EducationInputForm} />
+                <InputSectionBody sectionDetails={educationDetails} setSectionDetails={setEducationDetails} InputForm={EducationInputForm} />
             </InputSection>
             <InputSection heading="Work Experience" icon="./src/assets/work-icon.svg" icon_alt="Work Icon" >
-                <SectionInputForms sectionDetails={workExpDetails} setSectionDetails={setWorkExpDetails} SectionItem={WorkExpInputForm} />
+                <InputSectionBody sectionDetails={workExpDetails} setSectionDetails={setWorkExpDetails} InputForm={WorkExpInputForm} />
             </InputSection>
         </div>
     );
