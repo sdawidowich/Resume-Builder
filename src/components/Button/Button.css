@@ -19,3 +19,12 @@
     background-color: rgb(230, 24, 24);
     border: 1px solid hsl(0, 81%, 45%);
 }
+
+.button {
+    display: flex;
+    align-items: center;
+}
+
+.delete-icon {
+    filter: invert();
+}

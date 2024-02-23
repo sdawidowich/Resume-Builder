@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Button from "../../../Button/Button.jsx";
 import InputListItem from "../InputListItem/InputListItem.jsx";
 
-function InputSectionBody({sectionDetails, setSectionDetails, InputForm}) {
+function InputSectionBody({sectionDetails, setSectionDetails, DetailsClass, InputForm}) {
     const [selectedForm, setSelectedForm] = useState(-1);
 
     function update_sectionDetails(id, key, value) {
@@ -17,7 +17,7 @@ function InputSectionBody({sectionDetails, setSectionDetails, InputForm}) {
     }
 
     function add_sectionDetails() {
-        setSectionDetails([...sectionDetails, {id: crypto.randomUUID()}]);
+        setSectionDetails([...sectionDetails, new DetailsClass()]);
         setSelectedForm(sectionDetails.length);
     }
 
@@ -50,6 +50,7 @@ function InputSectionBody({sectionDetails, setSectionDetails, InputForm}) {
 InputSectionBody.propTypes = {
     sectionDetails: PropTypes.array,
     setSectionDetails: PropTypes.func,
+    DetailsClass: PropTypes.elementType,
     InputForm: PropTypes.elementType
 };
 

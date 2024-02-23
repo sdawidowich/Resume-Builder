@@ -1,13 +1,13 @@
 import PropTypes from "prop-types";
-import "./InputListItem.css"
 import Button from "../../../Button/Button";
+import "./InputListItem.css"
 
 function InputListItem({itemDetails, onSelect, onDelete}) {
-    let header = itemDetails[itemDetails["heading"]];
+    let header = itemDetails[itemDetails["itemHeader"]];
     return (
         <li className="input-list-item">
             <span className="item-name" onClick={onSelect}>{header ? header : "N/A"}</span>
-            <Button text="Delete" classes="delete" on_click={() => {onDelete(itemDetails["id"])}} />
+            <Button text="Delete" icon="./src/assets/trash-icon.svg" icon_alt="Delete Icon" classes="delete" on_click={() => {onDelete(itemDetails["id"])}} />
         </li>
     );
 }
