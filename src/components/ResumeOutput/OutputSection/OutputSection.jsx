@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types'
+import "./OutputSection.css"
 
 function OutputSectionDetails({ heading, children }) {
     return (
         <div className="output-section">
-            <h3 className="section-heading">{heading}</h3>
-            { children }
+            <div className="heading blue">{heading}</div>
+            <div className="section-underline"></div>
+            <div className="body">
+                { children }
+            </div>
         </div>
     )
 }

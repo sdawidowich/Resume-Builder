@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
+import "./OutputPersonalDetails.css"
 
 function OutputPersonalDetails({ personalDetails }) {
     return (
         <div className="output-personalDetails">
-            <h2 className='heading'>{personalDetails.FullName}</h2>
+            <div className='heading blue'>{personalDetails.FullName}</div>
             <div className="details">
-                <div>{personalDetails.Address}</div>
-                <div>{personalDetails.Phone}</div>
-                <div>{personalDetails.Email}</div>
-                <div>{personalDetails.Summary}</div>
+                <div className='address'>{personalDetails.Address}</div>
+                <div className='phone'>{personalDetails.Phone}</div>
+                <div className='email'>{personalDetails.Email}</div>
             </div>
         </div>
     )

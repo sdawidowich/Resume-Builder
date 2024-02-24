@@ -1,12 +1,26 @@
 .resume-output {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
+    flex: 0 0 auto;
 
-    border: 1px solid rgb(235, 235, 235);
-    box-shadow: 0rem 0rem 0.5rem 0.05rem rgba(0, 0, 0, 0.034);
-    padding: 0rem 1rem;
-    margin: 1rem;
+    position: sticky;
+    top: 16px;
 
     background-color: white;
+    border: 1px solid rgb(235, 235, 235);
+    box-shadow: 0rem 0rem 0.5rem 0.05rem rgba(0, 0, 0, 0.034);
+
+    margin: 1rem;
+    width: 595px;
+    height: calc(99vh - 2rem);
+    overflow-y: scroll;
+}
+
+#resume {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem 3rem;
+}
+
+.blue {
+    color: #004aad;
 }
