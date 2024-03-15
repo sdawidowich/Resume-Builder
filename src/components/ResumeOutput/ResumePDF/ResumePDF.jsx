@@ -1,21 +1,31 @@
 import PropTypes from 'prop-types'
-import { Page, Text, View, Document, StyleSheet } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
 
 function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) {
     let blue = '#004aad'
 
+    Font.register({ family: 'Inter', fonts: [
+        { src: './src/assets/fonts/Inter-Regular.ttf' },
+        { src: './src/assets/fonts/Inter-Bold.ttf' }
+    ]});
+
     const styles = StyleSheet.create({
+
+        //// Main
         page: {
+            fontFamily: 'Inter',
             display: 'flex',
             flexDirection: 'column',
             backgroundColor: 'white',
             padding: '32px 64px',
         },
 
+        // Resume Header
         pdfHeader: {
             display: 'flex',
             flexDirection: 'row',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            marginBottom: '8px'
         },
 
         name: {
@@ -24,6 +34,7 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
             flexDirection: 'column',
             color: blue,
             fontSize: '24px',
+            fontWeight: 'bold',
             wordBreak: 'break-word'
         },
 
@@ -35,9 +46,11 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
             fontSize: '9.6px'
         },
 
+        //// Resume Section
         section: {
             display: 'flex',
-            flexDirection: 'column'
+            flexDirection: 'column',
+            marginBottom: '8px'
         },
 
         sectionHeading: {
@@ -53,9 +66,31 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
             fontSize: '12px'
         },
 
+        // Section Item
         sectionItem: {
-            marginBottom: '16px'
+            display: 'flex',
+            flexDirection: 'row',
+            marginBottom: '16px',
+            fontSize: '10px'
+        },
+
+        sectionItemDate: {
+            flex: '1 0 25%'
+        },
+
+        sectionItemMain: {
+            flex: '1 0 75%'
+        },
+
+        itemHeading: {
+            color: blue,
+            fontWeight: 'bold'
+        },
+
+        itemSubheading: {
+            fontWeight: 'bold'
         }
+
     });
 
     let DOCUMENT = 'div';
@@ -94,7 +129,13 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
                                 <TEXT>SUMMARY</TEXT>
                             </VIEW>
                             <VIEW style={styles.sectionBody}>
-                                <TEXT>{personalDetails.Summary}</TEXT>
+                                <VIEW style={styles.sectionItem}>
+                                    <VIEW style={styles.sectionItemDate}>
+                                    </VIEW>
+                                    <VIEW style={styles.sectionItemMain}>
+                                        <TEXT>{personalDetails.Summary}</TEXT>
+                                    </VIEW>
+                                </VIEW>
                             </VIEW>
                         </>
                     </VIEW>
@@ -109,13 +150,13 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
                                         educationDetails.map((item) => {
                                             return (
                                                 <VIEW style={styles.sectionItem} key={item.id + "-output"}>
-                                                    <VIEW>
+                                                    <VIEW style={styles.sectionItemDate}>
                                                         {(item.StartDate || item.EndDate) ? <TEXT className="date">{item.StartDate + " - " + item.EndDate}</TEXT> : null}
                                                     </VIEW>
-                                                    <VIEW>
-                                                        <TEXT className='heading blue'>{item.School}</TEXT>
-                                                        <TEXT className='sub-heading'>{item.Degree}</TEXT>
-                                                        <TEXT className='gpa'>{item.GPA}</TEXT>
+                                                    <VIEW style={styles.sectionItemMain}>
+                                                        <TEXT style={styles.itemHeading}>{item.School}</TEXT>
+                                                        <TEXT style={styles.itemSubheading}>{item.Degree}</TEXT>
+                                                        <TEXT>{item.GPA}</TEXT>
                                                     </VIEW>
                                                 </VIEW>
                                             )
@@ -136,12 +177,12 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
                                         workExpDetails.map((item) => {
                                             return (
                                                 <VIEW style={styles.sectionItem} key={item.id + "-output"}>
-                                                    <VIEW>
+                                                    <VIEW style={styles.sectionItemDate}>
                                                         {(item.StartDate || item.EndDate) ? <TEXT>{item.StartDate + " - " + item.EndDate}</TEXT> : null}
                                                     </VIEW>
-                                                    <VIEW>
-                                                        <TEXT>{item.Company}</TEXT>
-                                                        <TEXT>{item.Position}</TEXT>
+                                                    <VIEW style={styles.sectionItemMain}>
+                                                        <TEXT style={styles.itemHeading}>{item.Company}</TEXT>
+                                                        <TEXT style={styles.itemSubheading}>{item.Position}</TEXT>
                                                         <TEXT>{item.Description}</TEXT>
                                                     </VIEW>
                                                 </VIEW>

@@ -22,8 +22,8 @@
 
 .input-section > .heading:hover {
     cursor: pointer;
-    outline-color: rgb(233, 233, 233);
-    box-shadow: 0rem 0rem 0.5rem 0.05rem rgba(0, 0, 0, 0.192);
+    outline-color: rgb(230, 230, 230);
+    box-shadow: 0rem 0rem 0.5rem 0.02rem rgba(0, 0, 0, 0.109);
     background-color: rgb(253, 253, 253);
 }
 
