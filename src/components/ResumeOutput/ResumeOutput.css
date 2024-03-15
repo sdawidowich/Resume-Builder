@@ -1,6 +1,10 @@
 .resume-output {
     flex: 0 0 auto;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
     position: sticky;
     top: 16px;
 
@@ -12,6 +16,10 @@
     width: 595px;
     height: calc(99vh - 2rem);
     overflow-y: scroll;
+}
+
+.resume-output > .download-btn {
+    margin: 1rem;
 }
 
 #resume {
