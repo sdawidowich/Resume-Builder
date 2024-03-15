@@ -7,10 +7,6 @@ import "./ResumeOutput.css";
 function ResumeOutput({personalDetails, educationDetails, workExpDetails}) {
 
     function downloadPDF() {
-        // const doc = new jsPDF('portrait', 'pt', 'a4');
-        // doc.html(document.getElementById("resume")).then(() => {
-        //     doc.save('resume.pdf');
-        // });
         let resumePDF = pdf(<ResumePDF format="PDF" personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} />);
         resumePDF.toBlob().then((blob) => {
             const filename = "resume.pdf";
@@ -27,19 +23,13 @@ function ResumeOutput({personalDetails, educationDetails, workExpDetails}) {
                 document.body.removeChild(el);
             }
         });
-        
     }
 
     return (
-        <>
-            {/* <PDFViewer  showToolbar={false} width="595" height="841">
-                <ResumePDF format="PDF" personalDetails={personalDetails} />
-            </PDFViewer> */}
-            <div className='resume-output'>
-                <ResumePDF personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} />
-                <Button classes="download-btn" text="Download" on_click={downloadPDF} />
-            </div>
-        </>
+        <div className='resume-output'>
+            <ResumePDF personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} />
+            <Button classes="download-btn" text="Download" on_click={downloadPDF} />
+        </div>
     );
 }
 

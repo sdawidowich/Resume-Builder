@@ -1,9 +1,0 @@
-.item-date {
-    flex: 0 0 auto;
-    width: 120px;
-    font-weight: lighter;
-}
-
-.section-item > .item-main > .heading, .section-item > .item-main > .sub-heading {
-    font-weight: bold;
-}
