@@ -9,11 +9,10 @@ function WorkExpInputForm({itemDetails, on_change}) {
 
     return (
         <div className="input-form">
-            <Input id="company" label="Company" value={itemDetails["Company"]} dataKey="Company" on_change={handleChange} />
-            <Input id="position" label="Position" value={itemDetails["Position"]} dataKey="Position" on_change={handleChange} />
-            <Input id="startDate" label="Start Date" value={itemDetails["StartDate"]} dataKey="StartDate" on_change={handleChange} />
-            <Input id="endDate" label="End Date" value={itemDetails["EndDate"]} dataKey="EndDate" on_change={handleChange} />
-            <Textarea id="description" label="Description" value={itemDetails["Description"]} dataKey="Description" on_change={handleChange} />
+            <Input id="company" label="Company" placeholder="GitHub" value={itemDetails["Company"]} dataKey="Company" on_change={handleChange} />
+            <Input id="position" label="Position" placeholder="Software Engineer" value={itemDetails["Position"]} dataKey="Position" on_change={handleChange} />
+            <Input id="date" label="Date" placeholder="Jun 2018 - Sept 2021" value={itemDetails["Date"]} dataKey="Date" on_change={handleChange} />
+            <Textarea id="description" label="Description" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus molestie nulla odio, a tristique lectus scelerisque vitae. Curabitur et accumsan est, non pretium augue..." value={itemDetails["Description"]} dataKey="Description" on_change={handleChange} />
         </div>
     );
 }

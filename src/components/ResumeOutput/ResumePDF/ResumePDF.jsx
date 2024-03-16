@@ -50,6 +50,10 @@ const styles = StyleSheet.create({
         fontSize: '9.6px'
     },
 
+    contactInfoItem: {
+        marginBottom: '4px'
+    },
+
     //// Resume Section
     section: {
         display: 'flex',
@@ -118,9 +122,9 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
                         <TEXT>{personalDetails.FullName}</TEXT>
                     </VIEW>
                     <VIEW style={styles.contactInfo}>
-                        <TEXT>{personalDetails.Address}</TEXT>
-                        <TEXT>{personalDetails.Phone}</TEXT>
-                        <TEXT>{personalDetails.Email}</TEXT>
+                        <TEXT style={styles.contactInfoItem}>{personalDetails.Location}</TEXT>
+                        <TEXT style={styles.contactInfoItem}>{personalDetails.Phone}</TEXT>
+                        <TEXT style={styles.contactInfoItem}>{personalDetails.Email}</TEXT>
                     </VIEW>
                 </VIEW>
                 <VIEW style={styles.section}>
@@ -148,7 +152,7 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
                                     return (
                                         <VIEW style={styles.sectionItem} key={item.id + "-output"}>
                                             <VIEW style={styles.sectionItemDate}>
-                                                {(item.StartDate || item.EndDate) ? <TEXT>{item.StartDate + " - " + item.EndDate}</TEXT> : null}
+                                                {item.Date ? <TEXT>{item.Date}</TEXT> : null}
                                             </VIEW>
                                             <VIEW style={styles.sectionItemMain}>
                                                 <TEXT style={styles.itemHeading}>{item.School}</TEXT>
@@ -173,7 +177,7 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
                                     return (
                                         <VIEW style={styles.sectionItem} key={item.id + "-output"}>
                                             <VIEW style={styles.sectionItemDate}>
-                                                {(item.StartDate || item.EndDate) ? <TEXT>{item.StartDate + " - " + item.EndDate}</TEXT> : null}
+                                                {item.Date ? <TEXT>{item.Date}</TEXT> : null}
                                             </VIEW>
                                             <VIEW style={styles.sectionItemMain}>
                                                 <TEXT style={styles.itemHeading}>{item.Company}</TEXT>

@@ -6,7 +6,12 @@ body {
 main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.left-container {
+    flex: 1;
+    max-width: 35rem;
 }
 
 .collapsed {

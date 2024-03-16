@@ -14,7 +14,7 @@
 .input-section > .heading {
     display: flex;
     padding: 1rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 0.4rem;
     transition: all 0.1s;
     outline: 1px solid transparent;
@@ -23,13 +23,14 @@
 .input-section > .heading:hover {
     cursor: pointer;
     outline-color: rgb(230, 230, 230);
-    box-shadow: 0rem 0rem 0.5rem 0.02rem rgba(0, 0, 0, 0.109);
+    box-shadow: 0.1rem 0.1rem 0.35rem 0.1rem rgba(0, 0, 0, 0.05);
     background-color: rgb(253, 253, 253);
 }
 
 .input-section > .heading > h3 {
     margin: 0rem;
     flex-grow: 1;
+    font-weight: 600;
 }
 
 .input-section > .heading > .section-icon {

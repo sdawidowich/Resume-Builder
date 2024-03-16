@@ -1,23 +1,31 @@
 .button {
     width: fit-content;
-    padding: 0.6rem 2.5rem;
+    padding: 0.5rem 1rem;
 
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: white;
     
     background-color: hsl(240, 100%, 70%);
     border: 1px solid hsl(240, 100%, 65%);
     border-radius: 0.4rem;
+    box-shadow: 0.1rem 0.1rem 0.35rem 0.1rem rgba(0, 0, 0, 0.05);
+    transition: filter 0.1s;
 }
 
 .button:hover {
     cursor: pointer;
-    filter: brightness(0.9);
+    filter: brightness(0.94);
 }
 
 .button.delete {
-    background-color: rgb(230, 24, 24);
-    border: 1px solid hsl(0, 81%, 45%);
+    color: black;
+    padding: 0.5rem;
+    background-color: rgb(252, 252, 252);
+    border: 1px solid rgb(216, 216, 216);
+}
+
+.button.delete > img {
+    filter: invert(0%);
 }
 
 .button {

@@ -1,13 +1,13 @@
 export class EducationDetails {
     constructor() {
         this.id = crypto.randomUUID();
-        this.itemHeader = "School";
+        this.headerKey = "School";
     }
 }
 
 export class WorkExpDetails {
     constructor() {
         this.id = crypto.randomUUID();
-        this.itemHeader = "Company";
+        this.headerKey = "Company";
     }
 }

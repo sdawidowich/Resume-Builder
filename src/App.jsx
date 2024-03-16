@@ -1,18 +1,31 @@
 import { useState } from 'react'
+import Menu from './components/Menu/Menu.jsx';
 import ResumeInput from './components/ResumeInput/ResumeInput.jsx';
 import ResumeOutput from './components/ResumeOutput/ResumeOutput.jsx';
 import { EducationDetails, WorkExpDetails } from './components/DetailsClasses.jsx';
 import "./App.css"
 
 function App() {
-  const [personalDetails, setPersonalDetails] = useState({});
+  const [personalDetails, setPersonalDetails] = useState({id: crypto.randomUUID()});
   const [educationDetails, setEducationDetails] = useState([new EducationDetails()]);
   const [workExpDetails, setWorkExpDetails] = useState([new WorkExpDetails()]);
+  const [menuState, setMenuState] = useState(-1);
+
+  function setResumeDetails(resumeDetails) {
+    setPersonalDetails(resumeDetails.personalDetails);
+    setEducationDetails(resumeDetails.educationDetails);
+    setWorkExpDetails(resumeDetails.workExpDetails);
+  }
 
   return (
     <main>
-      <ResumeInput personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} educationDetails={educationDetails} setEducationDetails={setEducationDetails} workExpDetails={workExpDetails} setWorkExpDetails={setWorkExpDetails} />
-      <ResumeOutput personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} />
+      <div className="left-container">
+        <Menu menuState={menuState} setMenuState={setMenuState} setResumeDetails={setResumeDetails} />
+        <ResumeInput personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} educationDetails={educationDetails} setEducationDetails={setEducationDetails} workExpDetails={workExpDetails} setWorkExpDetails={setWorkExpDetails} />
+      </div>
+      <div className="right-container">
+        <ResumeOutput personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} />
+      </div>
     </main>
   )
 }
