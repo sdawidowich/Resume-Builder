@@ -5,18 +5,21 @@ import EducationInputForm from "./InputSection/InputForms/EducationInputForm";
 import PersonalDetailsInputForm from "./InputSection/InputForms/PersonalDetailsInputForm";
 import WorkExpInputForm from "./InputSection/InputForms/WorkExpInputForm";
 import { EducationDetails, WorkExpDetails } from '../../helpers/DetailsClasses';
+import personIcon from "../../assets/icons/person-icon.svg";
+import schoolIcon from "../../assets/icons/school-icon.svg";
+import workIcon from "../../assets/icons/work-icon.svg";
 import "./ResumeInput.css";
 
 function ResumeInput({personalDetails, setPersonalDetails, educationDetails, setEducationDetails, workExpDetails, setWorkExpDetails}) {
     return(
         <div className='resume-input'>
-            <InputSection heading="Personal Details" icon="./src/assets/person-icon.svg" icon_alt="Person Icon" >
+            <InputSection heading="Personal Details" icon={personIcon} icon_alt="Person Icon" >
                 <PersonalDetailsInputForm personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} />
             </InputSection>
-            <InputSection heading="Education" icon="./src/assets/school-icon.svg" icon_alt="School Icon" >
+            <InputSection heading="Education" icon={schoolIcon} icon_alt="School Icon" >
                 <InputSectionBody sectionDetails={educationDetails} setSectionDetails={setEducationDetails} DetailsClass={EducationDetails} InputForm={EducationInputForm} />
             </InputSection>
-            <InputSection heading="Work Experience" icon="./src/assets/work-icon.svg" icon_alt="Work Icon" >
+            <InputSection heading="Work Experience" icon={workIcon} icon_alt="Work Icon" >
                 <InputSectionBody sectionDetails={workExpDetails} setSectionDetails={setWorkExpDetails} DetailsClass={WorkExpDetails} InputForm={WorkExpInputForm} />
             </InputSection>
         </div>

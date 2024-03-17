@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types'
+import InterRegular from "../../../assets/fonts/Inter-Regular.ttf";
+import InterBold from "../../../assets/fonts/Inter-Bold.ttf";
 import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
 
 
 // Load Fonts
 Font.register({ family: 'Inter', fonts: [
-    { src: './src/assets/fonts/Inter-Regular.ttf' },
-    { src: './src/assets/fonts/Inter-Bold.ttf' }
+    { src: InterRegular },
+    { src: InterBold }
 ]});
 Font.registerHyphenationCallback(word => [word]);
 

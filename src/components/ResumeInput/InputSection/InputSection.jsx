@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import './InputSection.css'
+import chevron from "../../../assets/icons/chevron.svg";
+import './InputSection.css';
 
 function InputSection({ heading, icon, icon_alt, children }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -14,7 +15,7 @@ function InputSection({ heading, icon, icon_alt, children }) {
       <div className="heading" onClick={on_heading_click}>
         <img className="section-icon" src={icon} alt={icon_alt} />
         <h3 className="heading">{heading}</h3>
-        <img className={"chevron" + (isCollapsed ? "" : " expanded-icon")} src="./src/assets/expand.svg" alt="Chevron Icon" />
+        <img className={"chevron" + (isCollapsed ? "" : " expanded-icon")} src={chevron} alt="Chevron Icon" />
       </div>
       <div className={"section-input" + (isCollapsed ? " collapsed" : "")}>
         {children}
