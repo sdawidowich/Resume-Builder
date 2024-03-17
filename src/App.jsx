@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Menu from './components/Menu/Menu.jsx';
 import ResumeInput from './components/ResumeInput/ResumeInput.jsx';
 import ResumeOutput from './components/ResumeOutput/ResumeOutput.jsx';
-import { EducationDetails, WorkExpDetails } from './components/DetailsClasses.jsx';
+import { EducationDetails, WorkExpDetails } from './helpers/DetailsClasses.jsx';
 import "./App.css"
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
   return (
     <main>
       <div className="left-container">
-        <Menu menuState={menuState} setMenuState={setMenuState} setResumeDetails={setResumeDetails} />
+        <Menu menuState={menuState} setMenuState={setMenuState} personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} setResumeDetails={setResumeDetails} />
         <ResumeInput personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} educationDetails={educationDetails} setEducationDetails={setEducationDetails} workExpDetails={workExpDetails} setWorkExpDetails={setWorkExpDetails} />
       </div>
       <div className="right-container">

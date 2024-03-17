@@ -4,8 +4,8 @@ import InputSectionBody from "./InputSection/InputSectionBody/InputSectionBody";
 import EducationInputForm from "./InputSection/InputForms/EducationInputForm";
 import PersonalDetailsInputForm from "./InputSection/InputForms/PersonalDetailsInputForm";
 import WorkExpInputForm from "./InputSection/InputForms/WorkExpInputForm";
+import { EducationDetails, WorkExpDetails } from '../../helpers/DetailsClasses';
 import "./ResumeInput.css";
-import { EducationDetails, WorkExpDetails } from '../DetailsClasses';
 
 function ResumeInput({personalDetails, setPersonalDetails, educationDetails, setEducationDetails, workExpDetails, setWorkExpDetails}) {
     return(
