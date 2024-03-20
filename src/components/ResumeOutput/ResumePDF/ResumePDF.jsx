@@ -1,7 +1,8 @@
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import InterRegular from "../../../assets/fonts/Inter-Regular.ttf";
 import InterBold from "../../../assets/fonts/Inter-Bold.ttf";
 import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
+import { LinkIcon, LocationIcon, MailIcon, PhoneIcon } from '../../../helpers/Icon';
 
 
 // Load Fonts
@@ -53,7 +54,15 @@ const styles = StyleSheet.create({
     },
 
     contactInfoItem: {
+        flex: '0 0 auto',
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
         marginBottom: '4px'
+    },
+
+    contactInfoText: {
+        paddingRight: '4px'
     },
 
     //// Resume Section
@@ -124,9 +133,22 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
                         <TEXT>{personalDetails.FullName}</TEXT>
                     </VIEW>
                     <VIEW style={styles.contactInfo}>
-                        <TEXT style={styles.contactInfoItem}>{personalDetails.Location}</TEXT>
-                        <TEXT style={styles.contactInfoItem}>{personalDetails.Phone}</TEXT>
-                        <TEXT style={styles.contactInfoItem}>{personalDetails.Email}</TEXT>
+                        <VIEW style={styles.contactInfoItem}>
+                            <TEXT style={styles.contactInfoText}>{personalDetails.Location}</TEXT>
+                            <LocationIcon format={format} width="12" height="12" />
+                        </VIEW>
+                        <VIEW style={styles.contactInfoItem}>
+                            <TEXT style={styles.contactInfoText}>{personalDetails.Phone}</TEXT>
+                            <PhoneIcon format={format} width="12" height="12" />
+                        </VIEW>
+                        <VIEW style={styles.contactInfoItem}>
+                            <TEXT style={styles.contactInfoText}>{personalDetails.Email}</TEXT>
+                            <MailIcon format={format} width="12" height="12" />
+                        </VIEW>
+                        <VIEW style={styles.contactInfoItem}>
+                            <TEXT style={styles.contactInfoText}>{personalDetails.Link}</TEXT>
+                            <LinkIcon format={format} width="12" height="12" />
+                        </VIEW>
                     </VIEW>
                 </VIEW>
                 <VIEW style={styles.section}>
