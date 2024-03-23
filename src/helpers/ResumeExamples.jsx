@@ -37,6 +37,40 @@ export function SampleResume() {
                 Date: "May 2023 - Aug 2023",
                 Description: "Developed technical specifications and designs that met customer requirements and business needs\nUtilized best practices and cutting-edge technologies to optimize software for best performance\nLed design review sessions for resolving software issues, resulting in significant cost savings for the company"
             }
+        ],
+        skills: [
+            {
+                id: crypto.randomUUID(),
+                Skill: "JavaScript"
+            },
+            {
+                id: crypto.randomUUID(),
+                Skill: "React.js"
+            },
+            {
+                id: crypto.randomUUID(),
+                Skill: "SQL"
+            },
+            {
+                id: crypto.randomUUID(),
+                Skill: "Python"
+            },
+            {
+                id: crypto.randomUUID(),
+                Skill: "C++"
+            },
+            {
+                id: crypto.randomUUID(),
+                Skill: "Unit Testing"
+            },
+            {
+                id: crypto.randomUUID(),
+                Skill: "Problem Solving"
+            },
+            {
+                id: crypto.randomUUID(),
+                Skill: "Customer Service"
+            }
         ]
     }
 
@@ -53,6 +87,11 @@ export function EmptyResume() {
         ],
         workExpDetails: [
             new WorkExpDetails()
+        ],
+        skills: [
+            {
+                id: crypto.randomUUID()
+            }
         ]
     }
 

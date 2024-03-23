@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     }
 });
 
-function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) {
+function ResumePDF({format, personalDetails, educationDetails, workExpDetails, skills}) {
     let DOCUMENT = 'div';
     let PAGE = 'div';
     let VIEW = 'div';
@@ -215,6 +215,27 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails}) 
                         </>
                     </VIEW>
                 </VIEW>
+                <VIEW style={styles.section}>
+                    <VIEW style={styles.sectionHeading}>
+                        <TEXT>SKILLS</TEXT>
+                    </VIEW>
+                    <VIEW style={styles.sectionBody}>
+                        <>
+                            {
+                                skills.map((item) => {
+                                    return (
+                                        <VIEW style={styles.sectionItem} key={item.id + "-output"}>
+                                            <VIEW style={styles.sectionItemDate}> </VIEW>
+                                            <VIEW style={styles.sectionItemMain}>
+                                                <TEXT>{item.Skill}</TEXT>
+                                            </VIEW>
+                                        </VIEW>
+                                    )
+                                })
+                            }
+                        </>
+                    </VIEW>
+                </VIEW>
             </PAGE>
         </DOCUMENT>
     )
@@ -224,7 +245,8 @@ ResumePDF.propTypes = {
     format: PropTypes.string,
     personalDetails: PropTypes.object,
     educationDetails: PropTypes.array,
-    workExpDetails: PropTypes.array
+    workExpDetails: PropTypes.array,
+    skills: PropTypes.array
 };
 
 export default ResumePDF;

@@ -4,10 +4,14 @@ import ResumePDF from './ResumePDF/ResumePDF';
 import { pdf } from '@react-pdf/renderer';
 import "./ResumeOutput.css";
 
-function ResumeOutput({personalDetails, educationDetails, workExpDetails}) {
+function ResumeOutput({personalDetails, educationDetails, workExpDetails, skills}) {
+
+    function getResume(format="") {
+        return (<ResumePDF format={format} personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} skills={skills} />);
+    }
 
     function downloadPDF() {
-        let resumePDF = pdf(<ResumePDF format="PDF" personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} />);
+        let resumePDF = pdf(getResume("PDF"));
         resumePDF.toBlob().then((blob) => {
             const filename = "resume.pdf";
             if(window.navigator.msSaveOrOpenBlob) {
@@ -27,7 +31,7 @@ function ResumeOutput({personalDetails, educationDetails, workExpDetails}) {
 
     return (
         <div className='resume-output'>
-            <ResumePDF personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} />
+            {getResume()}
             <Button classes="download-btn" text="Download" on_click={downloadPDF} />
         </div>
     );
@@ -36,7 +40,8 @@ function ResumeOutput({personalDetails, educationDetails, workExpDetails}) {
 ResumeOutput.propTypes = {
     personalDetails: PropTypes.object,
     educationDetails: PropTypes.array,
-    workExpDetails: PropTypes.array
+    workExpDetails: PropTypes.array,
+    skills: PropTypes.array
 };
   
 export default ResumeOutput;

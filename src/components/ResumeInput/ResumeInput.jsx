@@ -8,9 +8,10 @@ import { EducationDetails, WorkExpDetails } from '../../helpers/DetailsClasses';
 import personIcon from "../../assets/icons/person-icon.svg";
 import schoolIcon from "../../assets/icons/school-icon.svg";
 import workIcon from "../../assets/icons/work-icon.svg";
+import SkillsSectionBody from './InputSection/SkillsSectionBody/SkillsSectionBody';
 import "./ResumeInput.css";
 
-function ResumeInput({personalDetails, setPersonalDetails, educationDetails, setEducationDetails, workExpDetails, setWorkExpDetails}) {
+function ResumeInput({personalDetails, setPersonalDetails, educationDetails, setEducationDetails, workExpDetails, setWorkExpDetails, skills, setSkills}) {
     return(
         <div className='resume-input'>
             <InputSection heading="Personal Details" icon={personIcon} icon_alt="Person Icon" >
@@ -22,17 +23,22 @@ function ResumeInput({personalDetails, setPersonalDetails, educationDetails, set
             <InputSection heading="Work Experience" icon={workIcon} icon_alt="Work Icon" >
                 <InputSectionBody sectionDetails={workExpDetails} setSectionDetails={setWorkExpDetails} DetailsClass={WorkExpDetails} InputForm={WorkExpInputForm} />
             </InputSection>
+            <InputSection heading="Skills" icon={workIcon} icon_alt="Work Icon" >
+                <SkillsSectionBody skills={skills} setSkills={setSkills} />
+            </InputSection>
         </div>
     );
 }
 
 ResumeInput.propTypes = {
-    personalDetails: PropTypes.object, 
-    setPersonalDetails: PropTypes.func, 
-    educationDetails: PropTypes.array, 
-    setEducationDetails: PropTypes.func, 
-    workExpDetails: PropTypes.array, 
-    setWorkExpDetails: PropTypes.func
+    personalDetails: PropTypes.object,
+    setPersonalDetails: PropTypes.func,
+    educationDetails: PropTypes.array,
+    setEducationDetails: PropTypes.func,
+    workExpDetails: PropTypes.array,
+    setWorkExpDetails: PropTypes.func,
+    skills: PropTypes.array,
+    setSkills: PropTypes.func
   };
   
   export default ResumeInput;

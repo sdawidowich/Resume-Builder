@@ -65,3 +65,23 @@
     padding: 1rem 0rem;
     margin: 0;
 }
+
+.input-item {
+    display: flex;
+    align-items: flex-end;
+}
+
+.input-item > .input {
+    flex: 1 0 auto;
+    margin-right: 0.5rem;
+}
+
+.input-item > .input > input {
+    height: 41.6px;
+    box-sizing: border-box;
+}
+
+.input-item > .button {
+    height: min-content;
+    margin-bottom: 0.4rem;
+}

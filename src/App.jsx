@@ -9,22 +9,24 @@ function App() {
   const [personalDetails, setPersonalDetails] = useState({id: crypto.randomUUID()});
   const [educationDetails, setEducationDetails] = useState([new EducationDetails()]);
   const [workExpDetails, setWorkExpDetails] = useState([new WorkExpDetails()]);
+  const [skills, setSkills] = useState([{id: crypto.randomUUID()}]);
   const [menuState, setMenuState] = useState(-1);
 
   function setResumeDetails(resumeDetails) {
     setPersonalDetails(resumeDetails.personalDetails);
     setEducationDetails(resumeDetails.educationDetails);
     setWorkExpDetails(resumeDetails.workExpDetails);
+    setSkills(resumeDetails.skills);
   }
 
   return (
     <main>
       <div className="left-container">
         <Menu menuState={menuState} setMenuState={setMenuState} personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} setResumeDetails={setResumeDetails} />
-        <ResumeInput personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} educationDetails={educationDetails} setEducationDetails={setEducationDetails} workExpDetails={workExpDetails} setWorkExpDetails={setWorkExpDetails} />
+        <ResumeInput personalDetails={personalDetails} setPersonalDetails={setPersonalDetails} educationDetails={educationDetails} setEducationDetails={setEducationDetails} workExpDetails={workExpDetails} setWorkExpDetails={setWorkExpDetails} skills={skills} setSkills={setSkills} />
       </div>
       <div className="right-container">
-        <ResumeOutput personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} />
+        <ResumeOutput personalDetails={personalDetails} educationDetails={educationDetails} workExpDetails={workExpDetails} skills={skills} />
       </div>
     </main>
   )
