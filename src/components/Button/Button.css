@@ -9,22 +9,25 @@
     border: 1px solid hsl(240, 100%, 65%);
     border-radius: 0.4rem;
     box-shadow: 0.1rem 0.1rem 0.35rem 0.1rem rgba(0, 0, 0, 0.05);
-    transition: filter 0.1s;
 }
 
 .button:hover {
     cursor: pointer;
+    filter: brightness(0.90);
+}
+
+.button.secondary:hover {
     filter: brightness(0.94);
 }
 
-.button.delete {
+.button.secondary {
     color: black;
     padding: 0.5rem;
     background-color: rgb(252, 252, 252);
     border: 1px solid rgb(216, 216, 216);
 }
 
-.button.delete > img {
+.button.secondary > img {
     filter: invert(0%);
 }
 
@@ -33,6 +36,15 @@
     align-items: center;
 }
 
-.delete-icon {
+.button-icon {
     filter: invert();
+}
+
+.button:disabled:hover {
+    cursor: default;
+    filter: brightness(1);
+}
+
+.button:disabled {
+    opacity: 0.1;
 }

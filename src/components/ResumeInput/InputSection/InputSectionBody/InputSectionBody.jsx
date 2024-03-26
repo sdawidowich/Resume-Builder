@@ -21,6 +21,16 @@ function InputSectionBody({sectionDetails, setSectionDetails, DetailsClass, Inpu
         setSelectedForm(sectionDetails.length);
     }
 
+    function swapItem(index1, index2) {
+        if (index1 < 0 || index2 < 0 || index1 >= sectionDetails.length || index2 >= sectionDetails.length) {
+            return;
+        }
+
+        let temp = [...sectionDetails];
+        [temp[index1], temp[index2]] = [temp[index2], temp[index1]];
+        setSectionDetails(temp);
+    }
+
     if (selectedForm != -1) {
         let item = sectionDetails[selectedForm];
 
@@ -37,7 +47,7 @@ function InputSectionBody({sectionDetails, setSectionDetails, DetailsClass, Inpu
                 <ul className="section-items">
                     {
                         sectionDetails.map((item, i) => {
-                            return (<InputListItem key={item.id + "-inputListItem"} itemDetails={item} onSelect={() => {setSelectedForm(i)}} onDelete={(id) => {setSectionDetails(sectionDetails.filter((item) => item["id"] != id))}} />);
+                            return (<InputListItem key={item.id + "-inputListItem"} itemDetails={item} onSelect={() => {setSelectedForm(i)}} onDelete={(id) => {setSectionDetails(sectionDetails.filter((item) => item["id"] != id))}} index={i} listSize={sectionDetails.length} moveItem={swapItem} />);
                         })
                     }
                 </ul>

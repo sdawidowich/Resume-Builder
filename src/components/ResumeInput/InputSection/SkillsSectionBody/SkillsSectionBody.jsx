@@ -18,13 +18,23 @@ function SkillsSectionBody({skills, setSkills}) {
         setSkills([...skills, {id: crypto.randomUUID()}])
     }
 
+    function swapItem(index1, index2) {
+        if (index1 < 0 || index2 < 0 || index1 >= skills.length || index2 >= skills.length) {
+            return;
+        }
+
+        let temp = [...skills];
+        [temp[index1], temp[index2]] = [temp[index2], temp[index1]];
+        setSkills(temp);
+    }
+
     return (
         <>
             <ul className="section-items">
                 {
-                    skills.map((item) => {
+                    skills.map((item, i) => {
                         return (
-                            <SkillsInputForm key={item.id} itemDetails={item} on_change={updateSkill} on_delete={(id) => {setSkills(skills.filter((item) => item["id"] != id))}} />
+                            <SkillsInputForm key={item.id} itemDetails={item} on_change={updateSkill} on_delete={(id) => {setSkills(skills.filter((item) => item["id"] != id))}} index={i} listSize={skills.length} moveItem={swapItem} />
                         )
                     })
                 }

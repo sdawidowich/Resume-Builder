@@ -85,3 +85,7 @@
     height: min-content;
     margin-bottom: 0.4rem;
 }
+
+.margin-left {
+    margin-left: 0.3rem;
+}

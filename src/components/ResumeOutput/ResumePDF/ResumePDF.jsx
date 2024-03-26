@@ -225,7 +225,7 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails, s
                                 skills.map((item) => {
                                     return (
                                         <VIEW style={styles.sectionItem} key={item.id + "-output"}>
-                                            <VIEW style={styles.sectionItemDate}> </VIEW>
+                                            <VIEW style={styles.sectionItemDate}></VIEW>
                                             <VIEW style={styles.sectionItemMain}>
                                                 <TEXT>{item.Skill}</TEXT>
                                             </VIEW>

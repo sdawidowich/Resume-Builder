@@ -6,14 +6,31 @@
 
 .input-list-item > .item-name {
     flex: 1;
-    padding: 0rem 1rem;
+
     display: flex;
     align-items: center;
+
+    width: calc(100%);
     margin-right: 0.5rem;
+
     border: 1px solid rgb(240, 240, 240);
     border-radius: 0.5rem;
     background-color: rgb(243, 243, 243);
+    filter: brightness(1);
+    
     transition: filter 0.2s;
+}
+
+.input-list-item > .item-name > span {
+    display: inline-block;
+
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    width: calc(100% - 2rem);
+    padding: 0rem 1rem;
 }
 
 .input-list-item > .item-name:hover {
