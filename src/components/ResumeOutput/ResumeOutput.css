@@ -19,7 +19,7 @@
 }
 
 .resume-output > .resume {
-    
+    width: 100%;
     overflow-y: scroll;
 }
 
