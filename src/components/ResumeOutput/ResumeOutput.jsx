@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import Button from '../Button/Button';
 import ResumePDF from './ResumePDF/ResumePDF';
 import { pdf } from '@react-pdf/renderer';
+import downloadIcon from '../../assets/icons/download.svg'
 import "./ResumeOutput.css";
 
 function ResumeOutput({personalDetails, educationDetails, workExpDetails, skills}) {
@@ -31,8 +32,10 @@ function ResumeOutput({personalDetails, educationDetails, workExpDetails, skills
 
     return (
         <div className='resume-output'>
-            {getResume()}
-            <Button classes="download-btn" text="Download" on_click={downloadPDF} />
+            <div className='resume'>
+                {getResume()}
+            </div>
+            <Button classes="download-btn" text="Download" icon={downloadIcon} on_click={downloadPDF} />
         </div>
     );
 }

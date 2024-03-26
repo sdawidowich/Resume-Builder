@@ -10,8 +10,8 @@ function Menu({menuState, setMenuState, personalDetails, educationDetails, workE
 
     return (
         <div className="menu">
-            <Button text="Load Sample Resume" on_click={() => {setResumeDetails(sample)}} />
-            <Button text="Clear Resume" on_click={() => {setResumeDetails(emptyResume)}} />
+            <Button text="Load Sample" on_click={() => {setResumeDetails(sample)}} />
+            <Button text="Clear" on_click={() => {setResumeDetails(emptyResume)}} />
         </div>
     );
 }

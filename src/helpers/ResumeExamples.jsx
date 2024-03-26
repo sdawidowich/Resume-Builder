@@ -8,6 +8,7 @@ export function SampleResume() {
             Location: "Madison, WI",
             Phone: "(123) 456-7890",
             Email: "johndoe54@gmail.com",
+            Link: "https://www.linkedin.com/in/john-doe/",
             Summary: "Motivated and detail-oriented Software Engineer with demonstrated success in designing, developing and maintaining software systems to increase organizational productivity and performance. Seeking to leverage strong leadership skills and technical know-how to bring valuable solutions to grow business success at your company."
         },
         educationDetails: [
