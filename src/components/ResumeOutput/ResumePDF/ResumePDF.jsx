@@ -109,6 +109,20 @@ const styles = StyleSheet.create({
 
     itemSubheading: {
         fontWeight: 'bold'
+    },
+
+    // Skills
+    skillsMain: {
+        flex: '1 0 75%',
+        display: 'flex',
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+    },
+
+    skillsItem: {
+        padding: '3px 1px',
+        margin: '4px 12px 4px 0px',
+        borderBottom: '1px solid ' + blue
     }
 });
 
@@ -157,8 +171,7 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails, s
                     </VIEW>
                     <VIEW style={styles.sectionBody}>
                         <VIEW style={styles.sectionItem}>
-                            <VIEW style={styles.sectionItemDate}>
-                            </VIEW>
+                            <VIEW style={styles.sectionItemDate}></VIEW>
                             <VIEW style={styles.sectionItemMain}>
                                 <TEXT>{personalDetails.Summary}</TEXT>
                             </VIEW>
@@ -220,20 +233,20 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails, s
                         <TEXT>SKILLS</TEXT>
                     </VIEW>
                     <VIEW style={styles.sectionBody}>
-                        <>
-                            {
-                                skills.map((item) => {
-                                    return (
-                                        <VIEW style={styles.sectionItem} key={item.id + "-output"}>
-                                            <VIEW style={styles.sectionItemDate}></VIEW>
-                                            <VIEW style={styles.sectionItemMain}>
+                        <VIEW style={styles.sectionItem}>
+                            <VIEW style={styles.sectionItemDate}></VIEW>
+                            <VIEW style={styles.skillsMain}>
+                                {
+                                    skills.map((item) => {
+                                        return (
+                                            <VIEW style={styles.skillsItem} key={item.id + "-output"}>
                                                 <TEXT>{item.Skill}</TEXT>
                                             </VIEW>
-                                        </VIEW>
-                                    )
-                                })
-                            }
-                        </>
+                                        )
+                                    })
+                                }
+                            </VIEW>
+                        </VIEW>
                     </VIEW>
                 </VIEW>
             </PAGE>
