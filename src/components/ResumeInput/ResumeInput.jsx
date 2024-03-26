@@ -8,6 +8,7 @@ import { EducationDetails, WorkExpDetails } from '../../helpers/DetailsClasses';
 import personIcon from "../../assets/icons/person-icon.svg";
 import schoolIcon from "../../assets/icons/school-icon.svg";
 import workIcon from "../../assets/icons/work-icon.svg";
+import skillsIcon from "../../assets/icons/wrench.svg";
 import SkillsSectionBody from './InputSection/SkillsSectionBody/SkillsSectionBody';
 import "./ResumeInput.css";
 
@@ -23,7 +24,7 @@ function ResumeInput({personalDetails, setPersonalDetails, educationDetails, set
             <InputSection heading="Work Experience" icon={workIcon} icon_alt="Work Icon" >
                 <InputSectionBody sectionDetails={workExpDetails} setSectionDetails={setWorkExpDetails} DetailsClass={WorkExpDetails} InputForm={WorkExpInputForm} />
             </InputSection>
-            <InputSection heading="Skills" icon={workIcon} icon_alt="Work Icon" >
+            <InputSection heading="Skills" icon={skillsIcon} icon_alt="Wrench Icon" >
                 <SkillsSectionBody skills={skills} setSkills={setSkills} />
             </InputSection>
         </div>
