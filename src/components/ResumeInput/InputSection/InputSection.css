@@ -72,7 +72,7 @@
 }
 
 .input-item > .input {
-    flex: 1 0 auto;
+    flex: 1 1 0%;
     margin-right: 0.5rem;
 }
 
