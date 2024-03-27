@@ -27,8 +27,21 @@
     border: 1px solid rgb(216, 216, 216);
 }
 
-.button.secondary > img {
+.button.secondary > img, .button.plain-circle > img {
     filter: invert(0%);
+}
+
+.button.plain-circle {
+    color: black;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: none;
+    border-radius: 100%;
+    box-shadow: none;
+}
+
+.button.plain-circle:hover {
+    background-color: rgba(0, 0, 0, 0.052);
 }
 
 .button {

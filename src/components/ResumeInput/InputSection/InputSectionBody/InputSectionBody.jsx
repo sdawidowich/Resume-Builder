@@ -30,6 +30,16 @@ function InputSectionBody({sectionDetails, setSectionDetails, DetailsClass, Inpu
         [temp[index1], temp[index2]] = [temp[index2], temp[index1]];
         setSectionDetails(temp);
     }
+    
+    function changeVisibility(id, value) {
+        setSectionDetails(sectionDetails.map((item) => {
+            if (item.id === id) {
+                return { ...item, visible: value };
+            }
+        
+            return item;
+        }))
+    }
 
     if (selectedForm != -1) {
         let item = sectionDetails[selectedForm];
@@ -47,7 +57,7 @@ function InputSectionBody({sectionDetails, setSectionDetails, DetailsClass, Inpu
                 <ul className="section-items">
                     {
                         sectionDetails.map((item, i) => {
-                            return (<InputListItem key={item.id + "-inputListItem"} itemDetails={item} onSelect={() => {setSelectedForm(i)}} onDelete={(id) => {setSectionDetails(sectionDetails.filter((item) => item["id"] != id))}} index={i} listSize={sectionDetails.length} moveItem={swapItem} />);
+                            return (<InputListItem key={item.id + "-inputListItem"} itemDetails={item} onSelect={() => {setSelectedForm(i)}} onDelete={(id) => {setSectionDetails(sectionDetails.filter((item) => item["id"] != id))}} index={i} listSize={sectionDetails.length} moveItem={swapItem} changeVisibility={changeVisibility} />);
                         })
                     }
                 </ul>

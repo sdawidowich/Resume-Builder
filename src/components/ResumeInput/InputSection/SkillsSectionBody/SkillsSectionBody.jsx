@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import Button from "../../../Button/Button.jsx";
 import SkillsInputForm from "../InputForms/SkillsInputForm.jsx";
+import { Skill } from "../../../../helpers/DetailsClasses.jsx";
 
 function SkillsSectionBody({skills, setSkills}) {
 
@@ -15,7 +16,7 @@ function SkillsSectionBody({skills, setSkills}) {
     }
 
     function addSkill() {
-        setSkills([...skills, {id: crypto.randomUUID()}])
+        setSkills([...skills, new Skill()])
     }
 
     function swapItem(index1, index2) {
@@ -28,13 +29,23 @@ function SkillsSectionBody({skills, setSkills}) {
         setSkills(temp);
     }
 
+    function changeVisibility(id, value) {
+        setSkills(skills.map((item) => {
+            if (item.id === id) {
+                return { ...item, visible: value };
+            }
+        
+            return item;
+        }))
+    }
+
     return (
         <>
             <ul className="section-items">
                 {
                     skills.map((item, i) => {
                         return (
-                            <SkillsInputForm key={item.id} itemDetails={item} on_change={updateSkill} on_delete={(id) => {setSkills(skills.filter((item) => item["id"] != id))}} index={i} listSize={skills.length} moveItem={swapItem} />
+                            <SkillsInputForm key={item.id} itemDetails={item} on_change={updateSkill} on_delete={(id) => {setSkills(skills.filter((item) => item["id"] != id))}} index={i} listSize={skills.length} moveItem={swapItem} changeVisibility={changeVisibility} />
                         )
                     })
                 }

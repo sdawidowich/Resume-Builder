@@ -1,4 +1,4 @@
-import { EducationDetails, WorkExpDetails } from "./DetailsClasses";
+import { EducationDetails, Skill, WorkExpDetails } from "./DetailsClasses";
 
 export function SampleResume() {
     let sampleResume = {
@@ -15,6 +15,7 @@ export function SampleResume() {
             {
                 id: crypto.randomUUID(),
                 headerKey: "School",
+                visible: true,
                 School: "Princeton University",
                 Degree: "B.S. in Computer Science",
                 Date: "Sept 2019 - May 2023",
@@ -23,6 +24,7 @@ export function SampleResume() {
             {
                 id: crypto.randomUUID(),
                 headerKey: "School",
+                visible: true,
                 School: "Princeton University",
                 Degree: "M.S. in Computer Science",
                 Date: "Sept 2023 - Present",
@@ -33,6 +35,7 @@ export function SampleResume() {
             {
                 id: crypto.randomUUID(),
                 headerKey: "Company",
+                visible: true,
                 Company: "Microsoft",
                 Position: "Software Engineer Intern",
                 Date: "May 2023 - Aug 2023",
@@ -42,34 +45,42 @@ export function SampleResume() {
         skills: [
             {
                 id: crypto.randomUUID(),
+                visible: true,
                 Skill: "JavaScript"
             },
             {
                 id: crypto.randomUUID(),
+                visible: true,
                 Skill: "React.js"
             },
             {
                 id: crypto.randomUUID(),
+                visible: true,
                 Skill: "SQL"
             },
             {
                 id: crypto.randomUUID(),
+                visible: true,
                 Skill: "Python"
             },
             {
                 id: crypto.randomUUID(),
+                visible: true,
                 Skill: "C++"
             },
             {
                 id: crypto.randomUUID(),
+                visible: true,
                 Skill: "Unit Testing"
             },
             {
                 id: crypto.randomUUID(),
+                visible: true,
                 Skill: "Problem Solving"
             },
             {
                 id: crypto.randomUUID(),
+                visible: true,
                 Skill: "Customer Service"
             }
         ]
@@ -90,9 +101,7 @@ export function EmptyResume() {
             new WorkExpDetails()
         ],
         skills: [
-            {
-                id: crypto.randomUUID()
-            }
+            new Skill()
         ]
     }
 

@@ -10,7 +10,6 @@
     display: flex;
     align-items: center;
 
-    width: calc(100%);
     margin-right: 0.5rem;
 
     border: 1px solid rgb(240, 240, 240);
@@ -21,16 +20,26 @@
     transition: filter 0.2s;
 }
 
-.input-list-item > .item-name > span {
-    display: inline-block;
+.input-list-item > .item-name > div {
+    flex: 1;
 
-    position: absolute;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    width: 0;
+    height: 100%;
+    padding: 0rem 0.5rem 0rem 0.5rem;
+}
+
+.input-list-item > .item-name > div > span {
+    min-width: 0;
     white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
+}
 
-    width: calc(100% - 2rem);
-    padding: 0rem 1rem;
+.input-list-item > .item-name > .button.eye {
+    flex: 0;
 }
 
 .input-list-item > .item-name:hover {

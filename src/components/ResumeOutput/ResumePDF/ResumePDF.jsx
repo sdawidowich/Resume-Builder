@@ -147,22 +147,38 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails, s
                         <TEXT>{personalDetails.FullName}</TEXT>
                     </VIEW>
                     <VIEW style={styles.contactInfo}>
-                        <VIEW style={styles.contactInfoItem}>
-                            <TEXT style={styles.contactInfoText}>{personalDetails.Location}</TEXT>
-                            <LocationIcon format={format} width="12" height="12" />
-                        </VIEW>
-                        <VIEW style={styles.contactInfoItem}>
-                            <TEXT style={styles.contactInfoText}>{personalDetails.Phone}</TEXT>
-                            <PhoneIcon format={format} width="12" height="12" />
-                        </VIEW>
-                        <VIEW style={styles.contactInfoItem}>
-                            <TEXT style={styles.contactInfoText}>{personalDetails.Email}</TEXT>
-                            <MailIcon format={format} width="12" height="12" />
-                        </VIEW>
-                        <VIEW style={styles.contactInfoItem}>
-                            <TEXT style={styles.contactInfoText}>{personalDetails.Link}</TEXT>
-                            <LinkIcon format={format} width="12" height="12" />
-                        </VIEW>
+                        {
+                            personalDetails.Location ? 
+                            <VIEW style={styles.contactInfoItem}>
+                                <TEXT style={styles.contactInfoText}>{personalDetails.Location}</TEXT>
+                                <LocationIcon format={format} width="12" height="12" />
+                            </VIEW>
+                            : null
+                        }
+                        {
+                            personalDetails.Phone ?
+                            <VIEW style={styles.contactInfoItem}>
+                                <TEXT style={styles.contactInfoText}>{personalDetails.Phone}</TEXT>
+                                <PhoneIcon format={format} width="12" height="12" />
+                            </VIEW>
+                            : null
+                        }
+                        {
+                            personalDetails.Email ?
+                            <VIEW style={styles.contactInfoItem}>
+                                <TEXT style={styles.contactInfoText}>{personalDetails.Email}</TEXT>
+                                <MailIcon format={format} width="12" height="12" />
+                            </VIEW>
+                            : null
+                        }
+                        {
+                            personalDetails.Link ?
+                            <VIEW style={styles.contactInfoItem}>
+                                <TEXT style={styles.contactInfoText}>{personalDetails.Link}</TEXT>
+                                <LinkIcon format={format} width="12" height="12" />
+                            </VIEW>
+                            : null
+                        }
                     </VIEW>
                 </VIEW>
                 <VIEW style={styles.section}>
@@ -186,6 +202,9 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails, s
                         <>
                             {
                                 educationDetails.map((item) => {
+                                    if (item.visible == false)
+                                        return null;
+                                    
                                     return (
                                         <VIEW style={styles.sectionItem} key={item.id + "-output"}>
                                             <VIEW style={styles.sectionItemDate}>
@@ -211,6 +230,9 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails, s
                         <>
                             {
                                 workExpDetails.map((item) => {
+                                    if (item.visible == false)
+                                        return null;
+
                                     return (
                                         <VIEW style={styles.sectionItem} key={item.id + "-output"}>
                                             <VIEW style={styles.sectionItemDate}>
@@ -238,6 +260,9 @@ function ResumePDF({format, personalDetails, educationDetails, workExpDetails, s
                             <VIEW style={styles.skillsMain}>
                                 {
                                     skills.map((item) => {
+                                        if (!item.Skill || item.visible == false) 
+                                            return null;
+
                                         return (
                                             <VIEW style={styles.skillsItem} key={item.id + "-output"}>
                                                 <TEXT>{item.Skill}</TEXT>

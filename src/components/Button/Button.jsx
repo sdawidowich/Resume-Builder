@@ -4,7 +4,7 @@ import './Button.css'
 function Button({id, text, icon, icon_alt, classes, dataKey, on_click, disabled}) {
   return (
     <button className={'button ' + classes} id={id} onClick={on_click} data-key={dataKey} disabled={disabled}>
-      {icon ? <img className='button-icon' src={icon} alt={icon_alt} /> : ""}{text}
+      {icon ? <img className='button-icon' src={icon} alt={icon_alt} width={18} height={18} /> : ""}{text}
     </button>
   )
 }
