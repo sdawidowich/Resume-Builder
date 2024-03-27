@@ -14,13 +14,13 @@
     box-shadow: 0rem 0rem 0.5rem 0.05rem rgba(0, 0, 0, 0.034);
 
     margin: 1rem;
-    width: 595px;
     height: calc(99vh - 2rem);
 }
 
 .resume-output > .resume {
-    width: 100%;
+    width: 595px;
     overflow-y: scroll;
+    scrollbar-gutter: stable;
 }
 
 .resume-output > .download-btn {
